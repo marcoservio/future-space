@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureSpace", "FutureSpace\FutureSpace.csproj", "{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D54F5745-8413-410F-AB27-3A198FFC85EA}
+	EndGlobalSection
+EndGlobal
