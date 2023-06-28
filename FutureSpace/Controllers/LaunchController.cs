@@ -1,4 +1,5 @@
-﻿using FutureSpace.Interfaces;
+﻿using FutureSpace.Authentication;
+using FutureSpace.Interfaces;
 using FutureSpace.Models;
 
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +18,7 @@ namespace FutureSpace.Controllers
         }
 
         [HttpGet]
+        [ApiKey]
         public async Task<ActionResult<IEnumerable<Launch>>> GetAllLaunchers()
         {
             var lstLaunchers = await _lauchRepository.GetAll();

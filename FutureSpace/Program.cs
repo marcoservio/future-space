@@ -1,4 +1,5 @@
 using FutureSpace.Context;
+using FutureSpace.Imports;
 using FutureSpace.Interfaces;
 using FutureSpace.Repositories;
 
@@ -20,13 +21,36 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Future Space", Version = "v1" });
+    c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
+    {
+        Description = "A API Key para acessar a API",
+        Type = SecuritySchemeType.ApiKey,
+        Name = "Launch-Api-Key",
+        In = ParameterLocation.Header,
+        Scheme = "ApiKeyScheme"
+    });
+    var scheme = new OpenApiSecurityScheme
+    {
+        Reference = new OpenApiReference
+        {
+            Type = ReferenceType.SecurityScheme,
+            Id = "ApiKey"
+        },
+        In = ParameterLocation.Header
+    };
+    var requirement = new OpenApiSecurityRequirement
+    {
+        { scheme, new List<string>() }
+    };
+    c.AddSecurityRequirement(requirement);
 });
 
+builder.Services.AddScoped<LauncherImportRoutine>();
 builder.Services.AddScoped<ILaunchRepository, LaunchRepository>();
+builder.Services.AddHostedService<LauncherImportService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -34,6 +58,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
