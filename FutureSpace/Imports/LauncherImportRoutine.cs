@@ -61,10 +61,10 @@ namespace FutureSpace.Imports
         {
             if (response.StatusCode == HttpStatusCode.TooManyRequests)
             {
-                Thread.Sleep(TimeSpan.FromSeconds(response.Headers.RetryAfter.Delta.Value.Seconds + 60));
-                response = await _httpClient.GetAsync(nextPage);
-
                 Console.WriteLine($"Muitas requisições: {response.ToString()}");
+                Thread.Sleep(TimeSpan.FromSeconds(response.Headers.RetryAfter.Delta.Value.Seconds + 60));
+
+                response = await _httpClient.GetAsync(nextPage);
 
                 if (response.StatusCode == HttpStatusCode.TooManyRequests)
                     await CheckRequestOk(nextPage, response);
