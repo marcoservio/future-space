@@ -26,7 +26,7 @@
                             await launcherImportRoutine.ImportLaunchers();
                         }
 
-                        await Task.Delay(TimeSpan.FromMinutes(5));
+                        await Task.Delay(TimeSpan.FromMinutes(3));
                     }
                 }, null, TimeSpan.FromSeconds(10), interval);
 
