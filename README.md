@@ -4,7 +4,7 @@ API para gerenciar e visualizar informações sobre lançamentos de foguetes, O 
 
 
 ## Documentação da API 
-[Documentação da API no Postman](https://documenter.getpostman.com/view/22241608/2s93z87iE2).
+[Documentação da API no Postman](https://documenter.getpostman.com/view/22241608/2s93z9cNYf).
 
 
 

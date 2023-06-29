@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cw1KSX6ieHobUvKNVwt+BjqosqneNH7GNSZCfsjoTRqokFGIwjV5gFFf7DXhrSuwY03ouj4mNqERREyYEiCd2g==",
+  "dgSpecHash": "kpHcCAW4O9qnLCDaScnWchSqbA/wIFuF8yy8PusIJstWHFiM8Wwm8ZcaC+P+HhbY35mi9obhpQhLNbiH15D25A==",
   "success": true,
-  "projectFilePath": "C:\\projects\\future-space\\FutureSpace\\FutureSpace\\FutureSpace.csproj",
+  "projectFilePath": "C:\\projects\\future-space\\FutureSpace\\FutureSpace\\FutureSpace.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marco Sérvio\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Marco Sérvio\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

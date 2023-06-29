@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FutureSpace.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230628180736_Migração Inicial")]
+    [Migration("20230628214849_Migração Inicial")]
     partial class MigraçãoInicial
     {
         /// <inheritdoc />
@@ -78,8 +78,9 @@ namespace FutureSpace.Migrations
 
             modelBuilder.Entity("FutureSpace.Models.Launch", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("FailReason")
                         .HasColumnType("longtext");
@@ -354,8 +355,8 @@ namespace FutureSpace.Migrations
                     b.Property<string>("Info_Url")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("LaunchId")
-                        .HasColumnType("varchar(255)");
+                    b.Property<Guid?>("LaunchId")
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext");

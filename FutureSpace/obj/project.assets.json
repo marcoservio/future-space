@@ -3387,6 +3387,7 @@
       "Hangfire.MySqlStorage >= 2.0.3",
       "Microsoft.EntityFrameworkCore >= 7.0.8",
       "Microsoft.EntityFrameworkCore.Proxies >= 7.0.8",
+      "Microsoft.EntityFrameworkCore.Relational >= 7.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.8",
       "Newtonsoft.Json >= 13.0.3",
       "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
@@ -3400,9 +3401,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\future-space\\FutureSpace\\FutureSpace\\FutureSpace.csproj",
-      "projectName": "FutureSpace",
-      "projectPath": "C:\\projects\\future-space\\FutureSpace\\FutureSpace\\FutureSpace.csproj",
+      "projectUniqueName": "C:\\projects\\future-space\\FutureSpace\\FutureSpace\\FutureSpace.Api.csproj",
+      "projectName": "FutureSpace.Api",
+      "projectPath": "C:\\projects\\future-space\\FutureSpace\\FutureSpace\\FutureSpace.Api.csproj",
       "packagesPath": "C:\\Users\\Marco Sérvio\\.nuget\\packages\\",
       "outputPath": "C:\\projects\\future-space\\FutureSpace\\FutureSpace\\obj\\",
       "projectStyle": "PackageReference",
@@ -3458,6 +3459,10 @@
             "version": "[7.0.8, )"
           },
           "Microsoft.EntityFrameworkCore.Proxies": {
+            "target": "Package",
+            "version": "[7.0.8, )"
+          },
+          "Microsoft.EntityFrameworkCore.Relational": {
             "target": "Package",
             "version": "[7.0.8, )"
           },

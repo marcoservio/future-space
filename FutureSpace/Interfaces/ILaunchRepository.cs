@@ -6,7 +6,7 @@ namespace FutureSpace.Interfaces
     {
         void Update(Launch launch);
         void Delete(Launch launch);
-        Task<Launch> GetById(string id);
+        Task<Launch> GetById(Guid id);
         Task<IEnumerable<Launch>> GetAll();
         Task<bool> SaveAllAsync();
     }

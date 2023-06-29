@@ -141,11 +141,6 @@ namespace FutureSpace.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Rockets", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Rockets_Configurations_ConfigurationId",
-                        column: x => x.ConfigurationId,
-                        principalTable: "Configurations",
-                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -179,11 +174,6 @@ namespace FutureSpace.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pads", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Pads_Locations_LocationId",
-                        column: x => x.LocationId,
-                        principalTable: "Locations",
-                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -208,11 +198,6 @@ namespace FutureSpace.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Missions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Missions_Orbits_OrbitId",
-                        column: x => x.OrbitId,
-                        principalTable: "Orbits",
-                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -220,8 +205,7 @@ namespace FutureSpace.Migrations
                 name: "Launchers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Url = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Launch_Library_Id = table.Column<string>(type: "longtext", nullable: true)
@@ -262,36 +246,6 @@ namespace FutureSpace.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Launchers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Launchers_LaunchResults_LaunchResultId",
-                        column: x => x.LaunchResultId,
-                        principalTable: "LaunchResults",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Launchers_LaunchServiceProviders_Launch_Service_ProviderId",
-                        column: x => x.Launch_Service_ProviderId,
-                        principalTable: "LaunchServiceProviders",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Launchers_Missions_MissionId",
-                        column: x => x.MissionId,
-                        principalTable: "Missions",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Launchers_Pads_PadId",
-                        column: x => x.PadId,
-                        principalTable: "Pads",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Launchers_Rockets_RocketId",
-                        column: x => x.RocketId,
-                        principalTable: "Rockets",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Launchers_Status_StatusId",
-                        column: x => x.StatusId,
-                        principalTable: "Status",
-                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -315,17 +269,11 @@ namespace FutureSpace.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Wiki_Url = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LaunchId = table.Column<string>(type: "varchar(255)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    LaunchId = table.Column<Guid>(type: "char(36)", nullable: true, collation: "ascii_general_ci")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Programs", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Programs_Launchers_LaunchId",
-                        column: x => x.LaunchId,
-                        principalTable: "Launchers",
-                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -346,11 +294,6 @@ namespace FutureSpace.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Agencies", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Agencies_Programs_Program_LaunchId",
-                        column: x => x.Program_LaunchId,
-                        principalTable: "Programs",
-                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 

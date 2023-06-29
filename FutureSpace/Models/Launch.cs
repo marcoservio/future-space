@@ -2,7 +2,7 @@
 {
     public class Launch
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public string Url { get; set; }
         public string Launch_Library_Id { get; set; }
         public string Slug { get; set; }
@@ -25,7 +25,7 @@
         public bool Webcast_Live { get; set; }
         public string Image { get; set; }
         public string Infographic { get; set; }
-        public virtual List<Program_Launch> Program { get; set; }
+        public virtual IEnumerable<Program_Launch> Program { get; set; }
         public DateTime Imported_t { get; set; }
         public string Status_t { get; set; }
     }

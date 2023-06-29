@@ -8,14 +8,10 @@ services:
   mysql-futurespace:
     image: mysql
     container_name: mysql-futurespace
-    restart: unless-stopped
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: 'future_space'
-    volumes:
-      - ./mysql:/docker-entrypoint-initdb.d
-    expose:
-      - 3310
     networks:
       - futurespace
 
@@ -27,11 +23,14 @@ services:
         version: 1
     image: app-futurespace
     container_name: app-futurespace
+    restart: always
+    ports:
+      - 80:80
     networks:
       - futurespace
     environment:
       - MYSQL_HOST=mysql-futurespace
-      - MYSQL_PORT=3310
+      - MYSQL_PORT=3306
       - MYSQL_DATABASE=future_space
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root

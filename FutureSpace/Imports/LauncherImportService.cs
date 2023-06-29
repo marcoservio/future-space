@@ -11,26 +11,33 @@
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            const int totalExecutionsPerDay = 10;
-            TimeSpan interval = TimeSpan.FromHours(24);
-
-            var timer = new Timer(async _ =>
+            try
             {
-                for (int i = 0; i < totalExecutionsPerDay; i++)
+                const int totalExecutionsPerDay = 10;
+                TimeSpan interval = TimeSpan.FromHours(24);
+
+                var timer = new Timer(async _ =>
                 {
-                    using (var scope = _serviceProvider.CreateScope())
+                    for (int i = 0; i < totalExecutionsPerDay; i++)
                     {
-                        var launcherImportRoutine = scope.ServiceProvider.GetRequiredService<LauncherImportRoutine>();
-                        await launcherImportRoutine.ImportLaunchers();
+                        using (var scope = _serviceProvider.CreateScope())
+                        {
+                            var launcherImportRoutine = scope.ServiceProvider.GetRequiredService<LauncherImportRoutine>();
+                            await launcherImportRoutine.ImportLaunchers();
+                        }
+
+                        await Task.Delay(TimeSpan.FromMinutes(5));
                     }
+                }, null, TimeSpan.FromSeconds(10), interval);
 
-                    await Task.Delay(TimeSpan.FromMinutes(1));
+                while (!stoppingToken.IsCancellationRequested)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
                 }
-            }, null, TimeSpan.FromSeconds(10), interval);
-
-            while (!stoppingToken.IsCancellationRequested)
+            }
+            catch (Exception ex)
             {
-                await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
+                Console.WriteLine($"Houve um erro: {ex.Message}");
             }
         }
     }

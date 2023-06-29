@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureSpace", "FutureSpace\FutureSpace.csproj", "{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureSpace.Api", "FutureSpace\FutureSpace.Api.csproj", "{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureSpace.Tests", "FutureSpace.Tests\FutureSpace.Tests.csproj", "{20140228-F4D7-43D4-965E-BA621123EEF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD9B2914-E535-4ACC-A7E5-5D79CBAE630C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20140228-F4D7-43D4-965E-BA621123EEF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20140228-F4D7-43D4-965E-BA621123EEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20140228-F4D7-43D4-965E-BA621123EEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20140228-F4D7-43D4-965E-BA621123EEF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

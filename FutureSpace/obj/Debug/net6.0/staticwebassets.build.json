@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "ZpuyPjUm+NWWYwJV9Kc391NqsSyqprP+8VAiYLsJ+fU=",
-  "Source": "FutureSpace",
-  "BasePath": "_content/FutureSpace",
+  "Hash": "Jz5l9zHebL27ixYhsSF1tEEkvJD2D2C50CZUnduJFQw=",
+  "Source": "FutureSpace.Api",
+  "BasePath": "_content/FutureSpace.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

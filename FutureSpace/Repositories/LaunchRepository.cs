@@ -25,7 +25,7 @@ namespace FutureSpace.Repositories
             return await _context.Launchers.ToListAsync();
         }
 
-        public async Task<Launch> GetById(string id)
+        public async Task<Launch> GetById(Guid id)
         {
             return await _context.Launchers.FirstOrDefaultAsync(l => l.Id == id);
         }

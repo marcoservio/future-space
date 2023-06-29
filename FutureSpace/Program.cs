@@ -51,6 +51,9 @@ builder.Services.AddHostedService<LauncherImportService>();
 
 var app = builder.Build();
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -67,4 +70,12 @@ app.MapGet("/", () => "REST Back-end Challenge 20201209 Running");
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+}
+
 app.Run();
+
+public partial class Program { }
