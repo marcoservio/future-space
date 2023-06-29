@@ -15,7 +15,6 @@ namespace FutureSpace.Authentication
                 return;
             }
 
-
             if (!AuthConstants.ApiKey.Equals(extractedApiKey))
             {
                 context.Result = new UnauthorizedObjectResult("Invalide API Key");
